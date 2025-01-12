@@ -32,7 +32,14 @@ var LocalTrackPublicationSignaling = /** @class */ (function (_super) {
      */
     function LocalTrackPublicationSignaling(trackSender, name, priority) {
         var _this = this;
-        trackSender = trackSender.clone();
+        // NOTE(lrivas): Safely clone a media stream track while preserving the original
+        // enabled state. This is needed because Safari 18 incorrectly enables tracks
+        // during cloning. Bug report: https://bugs.webkit.org/show_bug.cgi?id=281758
+        var clonedTrackSender = trackSender.clone();
+        if (trackSender.kind !== 'data') {
+            clonedTrackSender.track.enabled = trackSender.track.enabled;
+        }
+        trackSender = clonedTrackSender;
         var enabled = trackSender.kind === 'data' ? true : trackSender.track.enabled;
         _this = _super.call(this, name, trackSender.kind, enabled, priority) || this;
         _this.setTrackTransceiver(trackSender);

@@ -19,7 +19,6 @@ var MediaStream = require('../../webrtc').MediaStream;
 var _a = require('../../util'), waitForEvent = _a.waitForEvent, waitForSometime = _a.waitForSometime;
 var localMediaRestartDeferreds = require('../../util/localmediarestartdeferreds');
 var Track = require('./');
-var hasDocumentPiP = require('../../services/documentPictureInPicture').hasDocumentPiP;
 /**
  * A {@link MediaTrack} represents audio or video that can be sent to or
  * received from a {@link Room}.

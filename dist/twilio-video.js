@@ -1,9 +1,9 @@
-/*! twilio-video.js 2.29.0-ev
+/*! twilio-video.js 2.29.1-ev
 
 The following license applies to all parts of this software except as
 documented below.
 
-    Copyright (C) 2019-2022 Twilio, inc.
+    Copyright (C) 2019-2025 Twilio, inc.
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -83,7 +83,7 @@ function createCancelableRoomPromise(getLocalTracks, createLocalParticipant, cre
 }
 module.exports = createCancelableRoomPromise;
 
-},{"./util/cancelablepromise":125}],2:[function(require,module,exports){
+},{"./util/cancelablepromise":126}],2:[function(require,module,exports){
 'use strict';
 var MediaStreamTrack = require('./webrtc').MediaStreamTrack;
 var _a = require('./webrtc/util'), guessBrowser = _a.guessBrowser, guessBrowserVersion = _a.guessBrowserVersion, isCodecSupported = _a.isCodecSupported;
@@ -1004,7 +1004,7 @@ function normalizeCodecSettings(nameOrSettings) {
 }
 module.exports = connect;
 
-},{"./cancelableroompromise":1,"./encodingparameters":9,"./localparticipant":13,"./media/track/es5":15,"./networkqualityconfiguration":44,"./room":57,"./signaling/v2":72,"./util":133,"./util/cancelablepromise":125,"./util/constants":126,"./util/eventobserver":131,"./util/insightspublisher":134,"./util/insightspublisher/null":135,"./util/log":137,"./util/validate":152,"./webrtc":160,"./webrtc/util":172}],3:[function(require,module,exports){
+},{"./cancelableroompromise":1,"./encodingparameters":9,"./localparticipant":13,"./media/track/es5":16,"./networkqualityconfiguration":45,"./room":58,"./signaling/v2":73,"./util":134,"./util/cancelablepromise":126,"./util/constants":127,"./util/eventobserver":132,"./util/insightspublisher":135,"./util/insightspublisher/null":136,"./util/log":138,"./util/validate":153,"./webrtc":161,"./webrtc/util":173}],3:[function(require,module,exports){
 'use strict';
 var _a = require('./util/constants'), DEFAULT_LOG_LEVEL = _a.DEFAULT_LOG_LEVEL, DEFAULT_LOGGER_NAME = _a.DEFAULT_LOGGER_NAME;
 /**
@@ -1153,7 +1153,7 @@ module.exports = {
     video: createLocalVideoTrack
 };
 
-},{"./util/constants":126}],4:[function(require,module,exports){
+},{"./util/constants":127}],4:[function(require,module,exports){
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use strict';
 var __assign = (this && this.__assign) || function () {
@@ -1411,7 +1411,7 @@ function createLocalTracks(options) {
 }
 exports.createLocalTracks = createLocalTracks;
 
-},{"./media/track/es5":15,"./media/track/noisecancellationimpl":29,"./util":133,"./util/constants":126,"./util/log":137,"./webaudio/workaround180748":157,"./webrtc":160}],5:[function(require,module,exports){
+},{"./media/track/es5":16,"./media/track/noisecancellationimpl":30,"./util":134,"./util/constants":127,"./util/log":138,"./webaudio/workaround180748":158,"./webrtc":161}],5:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -1610,7 +1610,7 @@ var DataTrackSender = /** @class */ (function (_super) {
 }(DataTrackTransceiver));
 module.exports = DataTrackSender;
 
-},{"../util":133,"./transceiver":7}],7:[function(require,module,exports){
+},{"../util":134,"./transceiver":7}],7:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -1670,7 +1670,7 @@ var DataTrackTransceiver = /** @class */ (function (_super) {
 }(TrackTransceiver));
 module.exports = DataTrackTransceiver;
 
-},{"../transceiver":120}],8:[function(require,module,exports){
+},{"../transceiver":121}],8:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -1767,7 +1767,7 @@ var DataTransport = /** @class */ (function (_super) {
  */
 module.exports = DataTransport;
 
-},{"events":175}],9:[function(require,module,exports){
+},{"events":176}],9:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -1865,13 +1865,13 @@ var EncodingParametersImpl = /** @class */ (function (_super) {
  */
 module.exports = EncodingParametersImpl;
 
-},{"events":175}],10:[function(require,module,exports){
+},{"events":176}],10:[function(require,module,exports){
 'use strict';
 var EventEmitter = require('events').EventEmitter;
 var hidePrivateAndCertainPublicPropertiesInClass = require('./util').hidePrivateAndCertainPublicPropertiesInClass;
 module.exports = hidePrivateAndCertainPublicPropertiesInClass(EventEmitter, ['domain']);
 
-},{"./util":133,"events":175}],11:[function(require,module,exports){
+},{"./util":134,"events":176}],11:[function(require,module,exports){
 'use strict';
 var __read = (this && this.__read) || function (o, n) {
     var m = typeof Symbol === "function" && o[Symbol.iterator];
@@ -1918,7 +1918,7 @@ var EventTarget = /** @class */ (function () {
 }());
 module.exports = EventTarget;
 
-},{"events":175}],12:[function(require,module,exports){
+},{"events":176}],12:[function(require,module,exports){
 'use strict';
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -1992,7 +1992,7 @@ module.exports = {
     LocalDataTrack: LocalDataTrack,
 };
 
-},{"../package.json":176,"./connect":2,"./createlocaltrack":3,"./createlocaltracks":4,"./media/track/es5":15,"./preflight/preflighttest":51,"./util/support":147,"./vendor/loglevel":154}],13:[function(require,module,exports){
+},{"../package.json":177,"./connect":2,"./createlocaltrack":3,"./createlocaltracks":4,"./media/track/es5":16,"./preflight/preflighttest":52,"./util/support":148,"./vendor/loglevel":155}],13:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -2706,7 +2706,7 @@ function getTrackPublication(trackPublications, track) {
 }
 module.exports = LocalParticipant;
 
-},{"./media/track/es5":15,"./media/track/localaudiotrackpublication":21,"./media/track/localdatatrackpublication":23,"./media/track/localvideotrackpublication":27,"./participant":46,"./util":133,"./util/constants":126,"./util/validate":152,"./webrtc":160}],14:[function(require,module,exports){
+},{"./media/track/es5":16,"./media/track/localaudiotrackpublication":22,"./media/track/localdatatrackpublication":24,"./media/track/localvideotrackpublication":28,"./participant":47,"./util":134,"./util/constants":127,"./util/validate":153,"./webrtc":161}],14:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -2861,7 +2861,79 @@ var AudioTrack = /** @class */ (function (_super) {
  */
 module.exports = AudioTrack;
 
-},{"./mediatrack":28}],15:[function(require,module,exports){
+},{"./mediatrack":29}],15:[function(require,module,exports){
+/* globals MediaStreamTrackGenerator, MediaStreamTrackProcessor, TransformStream */
+'use strict';
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var DEFAULT_FRAME_RATE = require('../../util/constants').DEFAULT_FRAME_RATE;
+function captureVideoFramesSetInterval(videoEl, processVideoFrame) {
+    var _a = __read(videoEl.srcObject.getVideoTracks(), 1), track = _a[0];
+    var _b = track.getSettings().frameRate, frameRate = _b === void 0 ? DEFAULT_FRAME_RATE : _b;
+    var sampleInterval;
+    var readable = new ReadableStream({
+        start: function (controller) {
+            sampleInterval = setInterval(function () { return controller.enqueue(); }, 1000 / frameRate);
+        }
+    });
+    var transformer = new TransformStream({
+        transform: function () {
+            return processVideoFrame();
+        }
+    });
+    readable
+        .pipeThrough(transformer)
+        .pipeTo(new WritableStream())
+        .then(function () { });
+    return function () {
+        clearInterval(sampleInterval);
+    };
+}
+function captureVideoFramesInsertableStreams(videoEl, processVideoFrame, videoFrameType) {
+    var _a = __read(videoEl.srcObject.getVideoTracks(), 1), track = _a[0];
+    var readable = new MediaStreamTrackProcessor({ track: track }).readable;
+    var generator = new MediaStreamTrackGenerator({ kind: 'video' });
+    var shouldStop = false;
+    var transformer = new TransformStream({
+        transform: function (videoFrame, controller) {
+            var promise = videoFrameType === 'videoframe'
+                ? processVideoFrame(videoFrame)
+                : Promise.resolve(videoFrame.close())
+                    .then(processVideoFrame);
+            return promise.finally(function () {
+                if (shouldStop) {
+                    controller.terminate();
+                }
+            });
+        }
+    });
+    readable
+        .pipeThrough(transformer)
+        .pipeTo(generator.writable)
+        .then(function () { });
+    return function () {
+        shouldStop = true;
+    };
+}
+module.exports = typeof MediaStreamTrackGenerator === 'function' && typeof MediaStreamTrackProcessor === 'function'
+    ? captureVideoFramesInsertableStreams
+    : captureVideoFramesSetInterval;
+
+},{"../../util/constants":127}],16:[function(require,module,exports){
 'use strict';
 module.exports = {
     LocalAudioTrack: require('./localaudiotrack'),
@@ -2869,7 +2941,7 @@ module.exports = {
     LocalDataTrack: require('./localdatatrack')
 };
 
-},{"./localaudiotrack":16,"./localdatatrack":17,"./localvideotrack":18}],16:[function(require,module,exports){
+},{"./localaudiotrack":17,"./localdatatrack":18,"./localvideotrack":19}],17:[function(require,module,exports){
 // eslint-disable-next-line no-warning-comments
 // TODO(mroberts): Remove this when we go to the next major version. This is
 // only in place so that we can support ES6 classes without requiring `new`.
@@ -2884,7 +2956,7 @@ function LocalAudioTrack(mediaStreamTrack, options) {
 inherits(LocalAudioTrack, LocalAudioTrackClass);
 module.exports = LocalAudioTrack;
 
-},{"../../../vendor/inherits":153,"../localaudiotrack":20}],17:[function(require,module,exports){
+},{"../../../vendor/inherits":154,"../localaudiotrack":21}],18:[function(require,module,exports){
 // eslint-disable-next-line no-warning-comments
 // TODO(mroberts): Remove this when we go to the next major version. This is
 // only in place so that we can support ES6 classes without requiring `new`.
@@ -2899,7 +2971,7 @@ function LocalDataTrack(options) {
 inherits(LocalDataTrack, LocalDataTrackClass);
 module.exports = LocalDataTrack;
 
-},{"../../../vendor/inherits":153,"../localdatatrack":22}],18:[function(require,module,exports){
+},{"../../../vendor/inherits":154,"../localdatatrack":23}],19:[function(require,module,exports){
 // eslint-disable-next-line no-warning-comments
 // TODO(mroberts): Remove this when we go to the next major version. This is
 // only in place so that we can support ES6 classes without requiring `new`.
@@ -2914,7 +2986,7 @@ function LocalVideoTrack(mediaStreamTrack, options) {
 inherits(LocalVideoTrack, LocalVideoTrackClass);
 module.exports = LocalVideoTrack;
 
-},{"../../../vendor/inherits":153,"../localvideotrack":26}],19:[function(require,module,exports){
+},{"../../../vendor/inherits":154,"../localvideotrack":27}],20:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -3026,7 +3098,7 @@ var Track = /** @class */ (function (_super) {
  */
 module.exports = Track;
 
-},{"../../eventemitter":10,"../../util":133,"../../util/constants":126,"../../util/log":137}],20:[function(require,module,exports){
+},{"../../eventemitter":10,"../../util":134,"../../util/constants":127,"../../util/log":138}],21:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -3044,6 +3116,8 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var isIOS = require('../../util/browserdetection').isIOS;
+var detectSilentAudio = require('../../util/detectsilentaudio');
+var isIOSChrome = require('../../webrtc/util').isIOSChrome;
 var AudioTrack = require('./audiotrack');
 var mixinLocalMediaTrack = require('./localmediatrack');
 var LocalMediaAudioTrack = mixinLocalMediaTrack(AudioTrack);
@@ -3227,6 +3301,28 @@ var LocalAudioTrack = /** @class */ (function (_super) {
         });
     };
     /**
+     * NOTE(mmalavalli): On iOS 17 Chrome, a LocalAudioTrack with Krisp Noise Cancellation
+     * enabled that is restarted due to foregrounding the browser is silent for as-of-yet
+     * unknown reason. We work around this by discarding the Krisp MediaStreamTrack and using
+     * the source MediaStreamTrack. (VIDEO-13006)
+     * @private
+     */
+    LocalAudioTrack.prototype._setMediaStreamTrack = function (mediaStreamTrack) {
+        var _this = this;
+        var _a = this, log = _a._log, noiseCancellation = _a.noiseCancellation;
+        var promise = _super.prototype._setMediaStreamTrack.call(this, mediaStreamTrack);
+        if (isIOSChrome() && !!noiseCancellation) {
+            log.debug('iOS Chrome detected, checking if the restarted Krisp audio is silent');
+            promise = promise.then(function () { return detectSilentAudio(_this._dummyEl); }).then(function (isSilent) {
+                log.debug("Krisp audio is " + (isSilent ? 'silent, using source audio' : 'not silent'));
+                return isSilent && noiseCancellation.disablePermanently().then(function () {
+                    return _super.prototype._setMediaStreamTrack.call(_this, noiseCancellation.sourceTrack);
+                });
+            });
+        }
+        return promise;
+    };
+    /**
      * Disable the {@link LocalAudioTrack}. This is equivalent to muting the audio source.
      * @returns {this}
      * @fires LocalAudioTrack#disabled
@@ -3345,7 +3441,7 @@ var LocalAudioTrack = /** @class */ (function (_super) {
  */
 module.exports = LocalAudioTrack;
 
-},{"../../util/browserdetection":124,"./audiotrack":14,"./localmediatrack":24}],21:[function(require,module,exports){
+},{"../../util/browserdetection":125,"../../util/detectsilentaudio":128,"../../webrtc/util":173,"./audiotrack":14,"./localmediatrack":25}],22:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -3391,7 +3487,7 @@ var LocalAudioTrackPublication = /** @class */ (function (_super) {
 }(LocalTrackPublication));
 module.exports = LocalAudioTrackPublication;
 
-},{"./localtrackpublication":25}],22:[function(require,module,exports){
+},{"./localtrackpublication":26}],23:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -3529,7 +3625,7 @@ var LocalDataTrack = /** @class */ (function (_super) {
  */
 module.exports = LocalDataTrack;
 
-},{"../../data/sender":6,"./":19}],23:[function(require,module,exports){
+},{"../../data/sender":6,"./":20}],24:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -3575,7 +3671,7 @@ var LocalDataTrackPublication = /** @class */ (function (_super) {
 }(LocalTrackPublication));
 module.exports = LocalDataTrackPublication;
 
-},{"./localtrackpublication":25}],24:[function(require,module,exports){
+},{"./localtrackpublication":26}],25:[function(require,module,exports){
 /* eslint new-cap:0 */
 'use strict';
 var __extends = (this && this.__extends) || (function () {
@@ -3971,7 +4067,7 @@ function restartWhenInadvertentlyStopped(localMediaTrack) {
 }
 module.exports = mixinLocalMediaTrack;
 
-},{"../../util":133,"../../util/browserdetection":124,"../../util/constants":126,"../../util/detectsilentaudio":127,"../../util/detectsilentvideo":128,"../../util/documentvisibilitymonitor.js":129,"../../util/localmediarestartdeferreds":136,"../../webaudio/workaround180748":157,"../../webrtc":160,"./sender":39}],25:[function(require,module,exports){
+},{"../../util":134,"../../util/browserdetection":125,"../../util/constants":127,"../../util/detectsilentaudio":128,"../../util/detectsilentvideo":129,"../../util/documentvisibilitymonitor.js":130,"../../util/localmediarestartdeferreds":137,"../../webaudio/workaround180748":158,"../../webrtc":161,"./sender":40}],26:[function(require,module,exports){
 /* eslint new-cap:0 */
 'use strict';
 var __extends = (this && this.__extends) || (function () {
@@ -4137,7 +4233,7 @@ var LocalTrackPublication = /** @class */ (function (_super) {
  */
 module.exports = LocalTrackPublication;
 
-},{"../../util/constants":126,"./trackpublication":40}],26:[function(require,module,exports){
+},{"../../util/constants":127,"./trackpublication":41}],27:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -4514,7 +4610,7 @@ function workaroundSilentLocalVideo(localVideoTrack, doc) {
  */
 module.exports = LocalVideoTrack;
 
-},{"../../services/documentPictureInPicture":58,"../../util/browserdetection":124,"../../util/detectsilentvideo":128,"../../util/documentvisibilitymonitor":129,"../../util/playattachedtracks":141,"./localmediatrack":24,"./videotrack":43}],27:[function(require,module,exports){
+},{"../../services/documentPictureInPicture":59,"../../util/browserdetection":125,"../../util/detectsilentvideo":129,"../../util/documentvisibilitymonitor":130,"../../util/playattachedtracks":142,"./localmediatrack":25,"./videotrack":44}],28:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -4560,7 +4656,7 @@ var LocalVideoTrackPublication = /** @class */ (function (_super) {
 }(LocalTrackPublication));
 module.exports = LocalVideoTrackPublication;
 
-},{"./localtrackpublication":25}],28:[function(require,module,exports){
+},{"./localtrackpublication":26}],29:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -4582,7 +4678,6 @@ var MediaStream = require('../../webrtc').MediaStream;
 var _a = require('../../util'), waitForEvent = _a.waitForEvent, waitForSometime = _a.waitForSometime;
 var localMediaRestartDeferreds = require('../../util/localmediarestartdeferreds');
 var Track = require('./');
-var hasDocumentPiP = require('../../services/documentPictureInPicture').hasDocumentPiP;
 /**
  * A {@link MediaTrack} represents audio or video that can be sent to or
  * received from a {@link Room}.
@@ -4925,7 +5020,7 @@ function shimMediaElement(el, onUnintentionallyPaused) {
 }
 module.exports = MediaTrack;
 
-},{"../../services/documentPictureInPicture":58,"../../util":133,"../../util/browserdetection":124,"../../util/localmediarestartdeferreds":136,"../../webrtc":160,"./":19}],29:[function(require,module,exports){
+},{"../../util":134,"../../util/browserdetection":125,"../../util/localmediarestartdeferreds":137,"../../webrtc":161,"./":20}],30:[function(require,module,exports){
 'use strict';
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -5154,7 +5249,7 @@ function applyNoiseCancellation(mediaStreamTrack, noiseCancellationOptions, log)
 }
 exports.applyNoiseCancellation = applyNoiseCancellation;
 
-},{"../../noisecancellationadapter":45,"../../util/log":137}],30:[function(require,module,exports){
+},{"../../noisecancellationadapter":46,"../../util/log":138}],31:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -5190,7 +5285,7 @@ var MediaTrackReceiver = /** @class */ (function (_super) {
 }(MediaTrackTransceiver));
 module.exports = MediaTrackReceiver;
 
-},{"./transceiver":41}],31:[function(require,module,exports){
+},{"./transceiver":42}],32:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -5299,7 +5394,7 @@ var RemoteAudioTrack = /** @class */ (function (_super) {
  */
 module.exports = RemoteAudioTrack;
 
-},{"./audiotrack":14,"./remotemediatrack":35}],32:[function(require,module,exports){
+},{"./audiotrack":14,"./remotemediatrack":36}],33:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -5371,7 +5466,7 @@ var RemoteAudioTrackPublication = /** @class */ (function (_super) {
  */
 module.exports = RemoteAudioTrackPublication;
 
-},{"./remotetrackpublication":36}],33:[function(require,module,exports){
+},{"./remotetrackpublication":37}],34:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -5558,7 +5653,7 @@ var RemoteDataTrack = /** @class */ (function (_super) {
  */
 module.exports = RemoteDataTrack;
 
-},{"../../util/constants":126,"./":19}],34:[function(require,module,exports){
+},{"../../util/constants":127,"./":20}],35:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -5620,7 +5715,7 @@ var RemoteDataTrackPublication = /** @class */ (function (_super) {
  */
 module.exports = RemoteDataTrackPublication;
 
-},{"./remotetrackpublication":36}],35:[function(require,module,exports){
+},{"./remotetrackpublication":37}],36:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -5906,7 +6001,7 @@ function playIfPausedWhileInBackground(remoteMediaTrack) {
  */
 module.exports = mixinRemoteMediaTrack;
 
-},{"../../util/browserdetection":124,"../../util/constants":126,"../../util/documentvisibilitymonitor.js":129}],36:[function(require,module,exports){
+},{"../../util/browserdetection":125,"../../util/constants":127,"../../util/documentvisibilitymonitor.js":130}],37:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -6101,7 +6196,7 @@ var RemoteTrackPublication = /** @class */ (function (_super) {
  */
 module.exports = RemoteTrackPublication;
 
-},{"./trackpublication":40}],37:[function(require,module,exports){
+},{"./trackpublication":41}],38:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -6544,7 +6639,7 @@ function maybeUpdateDimensionHint(remoteVideoTrack) {
  */
 module.exports = RemoteVideoTrack;
 
-},{"../../services/documentPictureInPicture":58,"../../util/documentvisibilitymonitor.js":129,"../../util/nullobserver.js":140,"../../util/playattachedtracks":141,"../../util/timeout":148,"./remotemediatrack":35,"./videotrack":43}],38:[function(require,module,exports){
+},{"../../services/documentPictureInPicture":59,"../../util/documentvisibilitymonitor.js":130,"../../util/nullobserver.js":141,"../../util/playattachedtracks":142,"../../util/timeout":149,"./remotemediatrack":36,"./videotrack":44}],39:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -6616,7 +6711,7 @@ var RemoteVideoTrackPublication = /** @class */ (function (_super) {
  */
 module.exports = RemoteVideoTrackPublication;
 
-},{"./remotetrackpublication":36}],39:[function(require,module,exports){
+},{"./remotetrackpublication":37}],40:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -6803,7 +6898,7 @@ var MediaTrackSender = /** @class */ (function (_super) {
  */
 module.exports = MediaTrackSender;
 
-},{"./transceiver":41}],40:[function(require,module,exports){
+},{"./transceiver":42}],41:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -6900,7 +6995,7 @@ var TrackPublication = /** @class */ (function (_super) {
  */
 module.exports = TrackPublication;
 
-},{"../../eventemitter":10,"../../util":133,"../../util/constants":126,"../../util/log":137}],41:[function(require,module,exports){
+},{"../../eventemitter":10,"../../util":134,"../../util/constants":127,"../../util/log":138}],42:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -6967,7 +7062,7 @@ var MediaTrackTransceiver = /** @class */ (function (_super) {
 }(TrackTransceiver));
 module.exports = MediaTrackTransceiver;
 
-},{"../../transceiver":120}],42:[function(require,module,exports){
+},{"../../transceiver":121}],43:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -7122,7 +7217,7 @@ var VideoProcessorEventObserver = /** @class */ (function (_super) {
 }(EventEmitter));
 module.exports = VideoProcessorEventObserver;
 
-},{"../../util/constants":126,"events":175}],43:[function(require,module,exports){
+},{"../../util/constants":127,"events":176}],44:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -7140,7 +7235,9 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var MediaTrack = require('./mediatrack');
+var captureVideoFrames = require('./capturevideoframes');
 var VideoProcessorEventObserver = require('./videoprocessoreventobserver');
+var guessBrowser = require('../../webrtc/util').guessBrowser;
 var DEFAULT_FRAME_RATE = require('../../util/constants').DEFAULT_FRAME_RATE;
 /**
  * A {@link VideoTrack} is a {@link Track} representing video.
@@ -7173,10 +7270,6 @@ var VideoTrack = /** @class */ (function (_super) {
     function VideoTrack(mediaTrackTransceiver, options) {
         var _this = _super.call(this, mediaTrackTransceiver, options) || this;
         Object.defineProperties(_this, {
-            _captureTimeoutId: {
-                value: null,
-                writable: true
-            },
             _isCapturing: {
                 value: false,
                 writable: true
@@ -7196,6 +7289,10 @@ var VideoTrack = /** @class */ (function (_super) {
             _processorOptions: {
                 value: {},
                 writable: true,
+            },
+            _stopCapture: {
+                value: function () { },
+                writable: true
             },
             _unmuteHandler: {
                 value: null,
@@ -7263,28 +7360,20 @@ var VideoTrack = /** @class */ (function (_super) {
         this._isCapturing = true;
         this._processorEventObserver.emit('start');
         this._log.debug('Start capturing frames');
-        var startTime = Date.now();
-        var processFramePeriodMs;
+        var inputFrameBufferType = this._processorOptions.inputFrameBufferType;
         this._dummyEl.play().then(function () {
-            var captureFrame = function (cb) {
-                clearTimeout(_this._captureTimeoutId);
-                var _a = _this.mediaStreamTrack.getSettings().frameRate, frameRate = _a === void 0 ? DEFAULT_FRAME_RATE : _a;
-                var capturePeriodMs = Math.floor(1000 / frameRate);
-                var delay = capturePeriodMs - processFramePeriodMs;
-                if (delay < 0 || typeof processFramePeriodMs !== 'number') {
-                    delay = 0;
-                }
-                _this._captureTimeoutId = setTimeout(cb, delay);
-            };
-            var process = function () {
+            var process = function (videoFrame) {
                 var checkResult = _this._checkIfCanCaptureFrames();
                 if (!checkResult.canCaptureFrames) {
+                    if (videoFrame) {
+                        videoFrame.close();
+                    }
                     _this._isCapturing = false;
+                    _this._stopCapture();
                     _this._processorEventObserver.emit('stop', checkResult.message);
                     _this._log.debug('Cannot capture frames. Stopping capturing frames.');
-                    return;
+                    return Promise.resolve();
                 }
-                startTime = Date.now();
                 var _a = _this.mediaStreamTrack.getSettings(), _b = _a.width, width = _b === void 0 ? 0 : _b, _c = _a.height, height = _c === void 0 ? 0 : _c;
                 // Setting the canvas' dimension triggers a redraw.
                 // Only set it if it has changed.
@@ -7299,15 +7388,17 @@ var VideoTrack = /** @class */ (function (_super) {
                     }
                     _this._inputFrame.getContext('2d').drawImage(_this._dummyEl, 0, 0, width, height);
                 }
+                var input = videoFrame || (['video', 'videoframe'].includes(inputFrameBufferType)
+                    ? _this._dummyEl
+                    : _this._inputFrame);
                 var result = null;
                 try {
-                    var input = _this._processorOptions.inputFrameBufferType === 'video' ? _this._dummyEl : _this._inputFrame;
                     result = _this.processor.processFrame(input, _this._outputFrame);
                 }
                 catch (ex) {
                     _this._log.debug('Exception detected after calling processFrame.', ex);
                 }
-                ((result instanceof Promise) ? result : Promise.resolve(result))
+                return ((result instanceof Promise) ? result : Promise.resolve(result))
                     .then(function () {
                     if (_this._outputFrame) {
                         if (typeof _this.processedTrack.requestFrame === 'function') {
@@ -7315,13 +7406,9 @@ var VideoTrack = /** @class */ (function (_super) {
                         }
                         _this._processorEventObserver.emit('stats');
                     }
-                })
-                    .finally(function () {
-                    processFramePeriodMs = Date.now() - startTime;
-                    captureFrame(process);
                 });
             };
-            captureFrame(process);
+            _this._stopCapture = captureVideoFrames(_this._dummyEl, process, inputFrameBufferType);
         }).catch(function (error) { return _this._log.error('Video element cannot be played', { error: error, track: _this }); });
     };
     /**
@@ -7421,7 +7508,11 @@ var VideoTrack = /** @class */ (function (_super) {
         if (typeof OffscreenCanvas === 'undefined' && inputFrameBufferType === 'offscreencanvas') {
             throw new Error('OffscreenCanvas is not supported by this browser.');
         }
-        if (inputFrameBufferType && inputFrameBufferType !== 'video' && inputFrameBufferType !== 'canvas' && inputFrameBufferType !== 'offscreencanvas') {
+        if (inputFrameBufferType
+            && inputFrameBufferType !== 'videoframe'
+            && inputFrameBufferType !== 'video'
+            && inputFrameBufferType !== 'canvas'
+            && inputFrameBufferType !== 'offscreencanvas') {
             throw new Error("Invalid inputFrameBufferType of " + inputFrameBufferType);
         }
         if (!inputFrameBufferType) {
@@ -7600,7 +7691,8 @@ var VideoTrack = /** @class */ (function (_super) {
         }
         this._processorEventObserver.emit('remove');
         this._log.debug('Removing VideoProcessor from the VideoTrack', processor);
-        clearTimeout(this._captureTimeoutId);
+        this._stopCapture();
+        this._stopCapture = function () { };
         this.mediaStreamTrack.removeEventListener('unmute', this._unmuteHandler);
         this._processorOptions = {};
         this._unmuteHandler = null;
@@ -7640,7 +7732,7 @@ function dimensionsChanged(track, elem) {
  * Any exception raised (either synchronously or asynchronously) in `processFrame` will result in the frame being dropped.
  * This callback has the following signature:<br/><br/>
  * <code>processFrame(</code><br/>
- * &nbsp;&nbsp;<code>inputFrameBuffer: OffscreenCanvas | HTMLCanvasElement | HTMLVideoElement,</code><br/>
+ * &nbsp;&nbsp;<code>inputFrameBuffer: OffscreenCanvas | HTMLCanvasElement | HTMLVideoElement | VideoFrame,</code><br/>
  * &nbsp;&nbsp;<code>outputFrameBuffer: HTMLCanvasElement</code><br/>
  * <code>): Promise&lt;void&gt; | void;</code>
  *
@@ -7664,6 +7756,10 @@ function dimensionsChanged(track, elem) {
  * Possible values include the following.
  * <br/>
  * <br/>
+ * `videoframe` - Your Video Processor will receive a [VideoFrame](https://developer.mozilla.org/en-US/docs/Web/API/VideoFrame).
+ * On browsers that do not support `VideoFrame`, it will receive an [HTMLVideoElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement) instead.
+ * <br/>
+ * <br/>
  * `offscreencanvas` - Your Video Processor will receive an [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas)
  * which is good for canvas-related processing that can be rendered off screen.
  * <br/>
@@ -7677,8 +7773,9 @@ function dimensionsChanged(track, elem) {
  * the frame directly to your output canvas.
  * @property {string} [outputFrameBufferContextType="2d"] - The SDK needs the [context type](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext)
  * that your Video Processor uses in order to properly generate the processed track. For example, if your Video Processor uses WebGL2 (`canvas.getContext('webgl2')`),
- * you should set `outputFrameBufferContextType` to `webgl2`. Or if you're using Canvas 2D processing (`canvas.getContext('2d')`),
- * you should set `outputFrameBufferContextType` to `2d`.
+ * you should set `outputFrameBufferContextType` to `webgl2`. If you're using Canvas 2D processing (`canvas.getContext('2d')`),
+ * you should set `outputFrameBufferContextType` to `2d`. If the output frame is an [ImageBitmap](https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap),
+ * you should set `outputFrameBufferContextType` to `bitmaprenderer`.
  */
 /**
  * The {@link VideoTrack}'s dimensions changed.
@@ -7703,7 +7800,7 @@ function dimensionsChanged(track, elem) {
  */
 module.exports = VideoTrack;
 
-},{"../../util/constants":126,"./mediatrack":28,"./videoprocessoreventobserver":42}],44:[function(require,module,exports){
+},{"../../util/constants":127,"../../webrtc/util":173,"./capturevideoframes":15,"./mediatrack":29,"./videoprocessoreventobserver":43}],45:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -7802,7 +7899,7 @@ var NetworkQualityConfigurationImpl = /** @class */ (function (_super) {
 }(EventEmitter));
 module.exports = NetworkQualityConfigurationImpl;
 
-},{"./util":133,"./util/constants":126,"events":175}],45:[function(require,module,exports){
+},{"./util":134,"./util/constants":127,"events":176}],46:[function(require,module,exports){
 'use strict';
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -7957,7 +8054,7 @@ function createNoiseCancellationAudioProcessor(noiseCancellationOptions, log) {
 }
 exports.createNoiseCancellationAudioProcessor = createNoiseCancellationAudioProcessor;
 
-},{"./util/dynamicimport":130,"./util/log":137}],46:[function(require,module,exports){
+},{"./util/dynamicimport":131,"./util/log":138}],47:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -8574,7 +8671,7 @@ function reemitTrackPublicationEvents(participant, publication) {
 }
 module.exports = Participant;
 
-},{"./eventemitter":10,"./media/track/remoteaudiotrack":31,"./media/track/remoteaudiotrackpublication":32,"./media/track/remotedatatrack":33,"./media/track/remotedatatrackpublication":34,"./media/track/remotevideotrack":37,"./media/track/remotevideotrackpublication":38,"./util":133}],47:[function(require,module,exports){
+},{"./eventemitter":10,"./media/track/remoteaudiotrack":32,"./media/track/remoteaudiotrackpublication":33,"./media/track/remotedatatrack":34,"./media/track/remotedatatrackpublication":35,"./media/track/remotevideotrack":38,"./media/track/remotevideotrackpublication":39,"./util":134}],48:[function(require,module,exports){
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -8728,7 +8825,7 @@ function extractSelectedActiveCandidatePair(stats) {
     };
 }
 
-},{}],48:[function(require,module,exports){
+},{}],49:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getTurnCredentials = void 0;
@@ -8776,7 +8873,7 @@ function getTurnCredentials(token, wsServer) {
 }
 exports.getTurnCredentials = getTurnCredentials;
 
-},{"../twilioconnection.js":121,"../util/constants":126,"../util/twilio-video-errors":149,"events":175}],49:[function(require,module,exports){
+},{"../twilioconnection.js":122,"../util/constants":127,"../util/twilio-video-errors":150,"events":176}],50:[function(require,module,exports){
 "use strict";
 var __read = (this && this.__read) || function (o, n) {
     var m = typeof Symbol === "function" && o[Symbol.iterator];
@@ -8817,7 +8914,7 @@ function makeStat(values) {
 }
 exports.makeStat = makeStat;
 
-},{}],50:[function(require,module,exports){
+},{}],51:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mosToScore = exports.calculateMOS = void 0;
@@ -8878,7 +8975,7 @@ function mosToScore(mosValue) {
 }
 exports.mosToScore = mosToScore;
 
-},{}],51:[function(require,module,exports){
+},{}],52:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -9522,7 +9619,7 @@ function runPreflight(token, options) {
 }
 exports.runPreflight = runPreflight;
 
-},{"../eventemitter":10,"../util/constants":126,"../util/eventobserver":131,"../util/index":133,"../util/insightspublisher":134,"../util/log":137,"../util/movingaveragedelta":138,"../util/sid":146,"../util/twilio-video-errors":149,"./getCombinedConnectionStats":47,"./getturncredentials":48,"./makestat":49,"./mos":50,"./syntheticaudio":52,"./syntheticvideo":53,"./timer":54}],52:[function(require,module,exports){
+},{"../eventemitter":10,"../util/constants":127,"../util/eventobserver":132,"../util/index":134,"../util/insightspublisher":135,"../util/log":138,"../util/movingaveragedelta":139,"../util/sid":147,"../util/twilio-video-errors":150,"./getCombinedConnectionStats":48,"./getturncredentials":49,"./makestat":50,"./mos":51,"./syntheticaudio":53,"./syntheticvideo":54,"./timer":55}],53:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.syntheticAudio = void 0;
@@ -9545,7 +9642,7 @@ function syntheticAudio() {
 }
 exports.syntheticAudio = syntheticAudio;
 
-},{"../webaudio/audiocontext":155}],53:[function(require,module,exports){
+},{"../webaudio/audiocontext":156}],54:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.syntheticVideo = void 0;
@@ -9579,7 +9676,7 @@ function syntheticVideo(_a) {
 }
 exports.syntheticVideo = syntheticVideo;
 
-},{}],54:[function(require,module,exports){
+},{}],55:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Timer = void 0;
@@ -9609,7 +9706,7 @@ var Timer = /** @class */ (function () {
 }());
 exports.Timer = Timer;
 
-},{}],55:[function(require,module,exports){
+},{}],56:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -9710,7 +9807,7 @@ var QueueingEventEmitter = /** @class */ (function (_super) {
 }(EventEmitter));
 module.exports = QueueingEventEmitter;
 
-},{"events":175}],56:[function(require,module,exports){
+},{"events":176}],57:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -9991,7 +10088,7 @@ var RemoteParticipant = /** @class */ (function (_super) {
  */
 module.exports = RemoteParticipant;
 
-},{"./participant":46}],57:[function(require,module,exports){
+},{"./participant":47}],58:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -10667,7 +10764,7 @@ function handleSignalingEvents(room, signaling) {
 }
 module.exports = Room;
 
-},{"./eventemitter":10,"./remoteparticipant":56,"./stats/statsreport":117,"./util":133}],58:[function(require,module,exports){
+},{"./eventemitter":10,"./remoteparticipant":57,"./stats/statsreport":118,"./util":134}],59:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.hasDocumentPiP = void 0;
@@ -10679,7 +10776,7 @@ var hasDocumentPiP = function () {
 };
 exports.hasDocumentPiP = hasDocumentPiP;
 
-},{}],59:[function(require,module,exports){
+},{}],60:[function(require,module,exports){
 /* eslint consistent-return:0 */
 'use strict';
 var __extends = (this && this.__extends) || (function () {
@@ -10849,7 +10946,7 @@ var Signaling = /** @class */ (function (_super) {
 }(StateMachine));
 module.exports = Signaling;
 
-},{"../statemachine":89,"./participant":62,"./room":66}],60:[function(require,module,exports){
+},{"../statemachine":90,"./participant":63,"./room":67}],61:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -10931,7 +11028,7 @@ var LocalParticipantSignaling = /** @class */ (function (_super) {
 }(ParticipantSignaling));
 module.exports = LocalParticipantSignaling;
 
-},{"./participant":62}],61:[function(require,module,exports){
+},{"./participant":63}],62:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -10966,7 +11063,14 @@ var LocalTrackPublicationSignaling = /** @class */ (function (_super) {
      */
     function LocalTrackPublicationSignaling(trackSender, name, priority) {
         var _this = this;
-        trackSender = trackSender.clone();
+        // NOTE(lrivas): Safely clone a media stream track while preserving the original
+        // enabled state. This is needed because Safari 18 incorrectly enables tracks
+        // during cloning. Bug report: https://bugs.webkit.org/show_bug.cgi?id=281758
+        var clonedTrackSender = trackSender.clone();
+        if (trackSender.kind !== 'data') {
+            clonedTrackSender.track.enabled = trackSender.track.enabled;
+        }
+        trackSender = clonedTrackSender;
         var enabled = trackSender.kind === 'data' ? true : trackSender.track.enabled;
         _this = _super.call(this, name, trackSender.kind, enabled, priority) || this;
         _this.setTrackTransceiver(trackSender);
@@ -11062,7 +11166,7 @@ function setError(publication, error) {
 }
 module.exports = LocalTrackPublicationSignaling;
 
-},{"./track":67}],62:[function(require,module,exports){
+},{"./track":68}],63:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -11287,7 +11391,7 @@ var ParticipantSignaling = /** @class */ (function (_super) {
  */
 module.exports = ParticipantSignaling;
 
-},{"../statemachine":89,"../stats/networkqualitystats":104}],63:[function(require,module,exports){
+},{"../statemachine":90,"../stats/networkqualitystats":105}],64:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -11360,7 +11464,7 @@ var RecordingSignaling = /** @class */ (function (_super) {
  */
 module.exports = RecordingSignaling;
 
-},{"events":175}],64:[function(require,module,exports){
+},{"events":176}],65:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -11400,7 +11504,7 @@ var RemoteParticipantSignaling = /** @class */ (function (_super) {
 }(ParticipantSignaling));
 module.exports = RemoteParticipantSignaling;
 
-},{"./participant":62}],65:[function(require,module,exports){
+},{"./participant":63}],66:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -11505,7 +11609,7 @@ var RemoteTrackPublicationSignaling = /** @class */ (function (_super) {
 }(TrackSignaling));
 module.exports = RemoteTrackPublicationSignaling;
 
-},{"./track":67}],66:[function(require,module,exports){
+},{"./track":68}],67:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -11786,7 +11890,7 @@ function maybeUpdateState(roomSignaling) {
 }
 module.exports = RoomSignaling;
 
-},{"../statemachine":89,"../util":133,"../util/constants":126,"../util/log":137,"../util/timeout":148,"../util/twilio-video-errors":149,"./recording":63}],67:[function(require,module,exports){
+},{"../statemachine":90,"../util":134,"../util/constants":127,"../util/log":138,"../util/timeout":149,"../util/twilio-video-errors":150,"./recording":64}],68:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -11969,7 +12073,7 @@ var TrackSignaling = /** @class */ (function (_super) {
  */
 module.exports = TrackSignaling;
 
-},{"events":175}],68:[function(require,module,exports){
+},{"events":176}],69:[function(require,module,exports){
 'use strict';
 var CancelablePromise = require('../../util/cancelablepromise');
 var DefaultPeerConnectionManager = require('./peerconnectionmanager');
@@ -12086,7 +12190,7 @@ function createCancelableRoomSignalingPromise(token, wsServer, localParticipant,
 }
 module.exports = createCancelableRoomSignalingPromise;
 
-},{"../../util":133,"../../util/cancelablepromise":125,"../../util/twilio-video-errors":149,"./peerconnectionmanager":79,"./room":85,"./twilioconnectiontransport":88}],69:[function(require,module,exports){
+},{"../../util":134,"../../util/cancelablepromise":126,"../../util/twilio-video-errors":150,"./peerconnectionmanager":80,"./room":86,"./twilioconnectiontransport":89}],70:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -12164,7 +12268,7 @@ var DominantSpeakerSignaling = /** @class */ (function (_super) {
  */
 module.exports = DominantSpeakerSignaling;
 
-},{"./mediasignaling":75}],70:[function(require,module,exports){
+},{"./mediasignaling":76}],71:[function(require,module,exports){
 'use strict';
 var Filter = require('../../util/filter');
 /**
@@ -12232,7 +12336,7 @@ var IceBox = /** @class */ (function () {
 }());
 module.exports = IceBox;
 
-},{"../../util/filter":132}],71:[function(require,module,exports){
+},{"../../util/filter":133}],72:[function(require,module,exports){
 'use strict';
 var _a = require('../../util/constants'), ICE_ACTIVITY_CHECK_PERIOD_MS = _a.ICE_ACTIVITY_CHECK_PERIOD_MS, ICE_INACTIVITY_THRESHOLD_MS = _a.ICE_INACTIVITY_THRESHOLD_MS;
 /**
@@ -12365,7 +12469,7 @@ var IceConnectionMonitor = /** @class */ (function () {
 }());
 module.exports = IceConnectionMonitor;
 
-},{"../../util/constants":126}],72:[function(require,module,exports){
+},{"../../util/constants":127}],73:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -12430,7 +12534,7 @@ var SignalingV2 = /** @class */ (function (_super) {
 }(Signaling));
 module.exports = SignalingV2;
 
-},{"../":59,"./cancelableroomsignalingpromise":68,"./localparticipant":73}],73:[function(require,module,exports){
+},{"../":60,"./cancelableroomsignalingpromise":69,"./localparticipant":74}],74:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -12770,7 +12874,7 @@ var LocalParticipantV2 = /** @class */ (function (_super) {
  */
 module.exports = LocalParticipantV2;
 
-},{"../../util":133,"../../util/constants":126,"../../util/log":137,"../localparticipant":60,"./localtrackpublication":74}],74:[function(require,module,exports){
+},{"../../util":134,"../../util/constants":127,"../../util/log":138,"../localparticipant":61,"./localtrackpublication":75}],75:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -12897,7 +13001,7 @@ var LocalTrackPublicationV2 = /** @class */ (function (_super) {
  */
 module.exports = LocalTrackPublicationV2;
 
-},{"../../util/twilio-video-errors":149,"../../util/twiliowarning":151,"../localtrackpublication":61}],75:[function(require,module,exports){
+},{"../../util/twilio-video-errors":150,"../../util/twiliowarning":152,"../localtrackpublication":62}],76:[function(require,module,exports){
 /* eslint callback-return:0 */
 'use strict';
 var __extends = (this && this.__extends) || (function () {
@@ -12994,7 +13098,7 @@ var MediaSignaling = /** @class */ (function (_super) {
 }(EventEmitter));
 module.exports = MediaSignaling;
 
-},{"events":175}],76:[function(require,module,exports){
+},{"events":176}],77:[function(require,module,exports){
 /* eslint callback-return:0 */
 'use strict';
 var __extends = (this && this.__extends) || (function () {
@@ -13153,7 +13257,7 @@ function next(monitor) {
  */
 module.exports = NetworkQualityMonitor;
 
-},{"../../stats/peerconnectionreportfactory":107,"events":175}],77:[function(require,module,exports){
+},{"../../stats/peerconnectionreportfactory":108,"events":176}],78:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -13418,7 +13522,7 @@ function createNetworkQualityInputsMessage(networkQualityInputs, networkQualityR
 }
 module.exports = NetworkQualitySignaling;
 
-},{"../../util/asyncvar":122,"../../util/timeout":148,"./mediasignaling":75}],78:[function(require,module,exports){
+},{"../../util/asyncvar":123,"../../util/timeout":149,"./mediasignaling":76}],79:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -15278,7 +15382,7 @@ function setMaxBitrate(params, maxBitrate) {
 }
 module.exports = PeerConnectionV2;
 
-},{"../../data/receiver":5,"../../media/track/receiver":30,"../../statemachine":89,"../../util":133,"../../util/backoff":123,"../../util/constants":126,"../../util/log":137,"../../util/sdp":142,"../../util/sdp/issue8329":143,"../../util/sdp/trackmatcher":145,"../../util/timeout":148,"../../util/twilio-video-errors":149,"../../webrtc":160,"../../webrtc/util":172,"./icebox":70,"./iceconnectionmonitor.js":71}],79:[function(require,module,exports){
+},{"../../data/receiver":5,"../../media/track/receiver":31,"../../statemachine":90,"../../util":134,"../../util/backoff":124,"../../util/constants":127,"../../util/log":138,"../../util/sdp":143,"../../util/sdp/issue8329":144,"../../util/sdp/trackmatcher":146,"../../util/timeout":149,"../../util/twilio-video-errors":150,"../../webrtc":161,"../../webrtc/util":173,"./icebox":71,"./iceconnectionmonitor.js":72}],80:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -15846,7 +15950,7 @@ function updateConnectionState(pcm) {
 }
 module.exports = PeerConnectionManager;
 
-},{"../../media/track/sender":39,"../../queueingeventemitter":55,"../../util":133,"../../util/twilio-video-errors":149,"../../webaudio/audiocontext":155,"../../webrtc/util":172,"./peerconnection":78}],80:[function(require,module,exports){
+},{"../../media/track/sender":40,"../../queueingeventemitter":56,"../../util":134,"../../util/twilio-video-errors":150,"../../webaudio/audiocontext":156,"../../webrtc/util":173,"./peerconnection":79}],81:[function(require,module,exports){
 /* eslint callback-return:0 */
 'use strict';
 var __extends = (this && this.__extends) || (function () {
@@ -15932,7 +16036,7 @@ var PublisherHintsSignaling = /** @class */ (function (_super) {
 }(MediaSignaling));
 module.exports = PublisherHintsSignaling;
 
-},{"./mediasignaling":75}],81:[function(require,module,exports){
+},{"./mediasignaling":76}],82:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -15992,7 +16096,7 @@ var RecordingV2 = /** @class */ (function (_super) {
  */
 module.exports = RecordingV2;
 
-},{"../recording":63}],82:[function(require,module,exports){
+},{"../recording":64}],83:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -16112,7 +16216,7 @@ var RemoteParticipantV2 = /** @class */ (function (_super) {
 }(RemoteParticipantSignaling));
 module.exports = RemoteParticipantV2;
 
-},{"../remoteparticipant":64,"./remotetrackpublication":83}],83:[function(require,module,exports){
+},{"../remoteparticipant":65,"./remotetrackpublication":84}],84:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -16166,7 +16270,7 @@ var RemoteTrackPublicationV2 = /** @class */ (function (_super) {
  */
 module.exports = RemoteTrackPublicationV2;
 
-},{"../remotetrackpublication":65}],84:[function(require,module,exports){
+},{"../remotetrackpublication":66}],85:[function(require,module,exports){
 /* eslint callback-return:0 */
 'use strict';
 var __extends = (this && this.__extends) || (function () {
@@ -16317,7 +16421,7 @@ var RenderHintsSignaling = /** @class */ (function (_super) {
 }(MediaSignaling));
 module.exports = RenderHintsSignaling;
 
-},{"../../util":133,"../../util/timeout":148,"./mediasignaling":75}],85:[function(require,module,exports){
+},{"../../util":134,"../../util/timeout":149,"./mediasignaling":76}],86:[function(require,module,exports){
 /* eslint-disable no-console */
 'use strict';
 var __extends = (this && this.__extends) || (function () {
@@ -17175,7 +17279,7 @@ function replaceNullsWithDefaults(activeIceCandidatePair, peerConnectionId) {
 }
 module.exports = RoomV2;
 
-},{"../../stats/statsreport":117,"../../util":133,"../../util/movingaveragedelta":138,"../../util/twilio-video-errors":149,"../room":66,"./dominantspeakersignaling":69,"./networkqualitymonitor":76,"./networkqualitysignaling":77,"./publisherhintsignaling.js":80,"./recording":81,"./remoteparticipant":82,"./renderhintssignaling":84,"./trackprioritysignaling":86,"./trackswitchoffsignaling":87}],86:[function(require,module,exports){
+},{"../../stats/statsreport":118,"../../util":134,"../../util/movingaveragedelta":139,"../../util/twilio-video-errors":150,"../room":67,"./dominantspeakersignaling":70,"./networkqualitymonitor":77,"./networkqualitysignaling":78,"./publisherhintsignaling.js":81,"./recording":82,"./remoteparticipant":83,"./renderhintssignaling":85,"./trackprioritysignaling":87,"./trackswitchoffsignaling":88}],87:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -17241,7 +17345,7 @@ var TrackPrioritySignaling = /** @class */ (function (_super) {
 }(MediaSignaling));
 module.exports = TrackPrioritySignaling;
 
-},{"./mediasignaling":75}],87:[function(require,module,exports){
+},{"./mediasignaling":76}],88:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -17299,7 +17403,7 @@ var TrackSwitchOffSignaling = /** @class */ (function (_super) {
  */
 module.exports = TrackSwitchOffSignaling;
 
-},{"./mediasignaling":75}],88:[function(require,module,exports){
+},{"./mediasignaling":76}],89:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -17886,7 +17990,7 @@ function setupTransport(transport) {
 }
 module.exports = TwilioConnectionTransport;
 
-},{"../../statemachine":89,"../../twilioconnection":121,"../../util":133,"../../util/backoff":123,"../../util/constants":126,"../../util/timeout":148,"../../util/twilio-video-errors":149}],89:[function(require,module,exports){
+},{"../../statemachine":90,"../../twilioconnection":122,"../../util":134,"../../util/backoff":124,"../../util/constants":127,"../../util/timeout":149,"../../util/twilio-video-errors":150}],90:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -18332,7 +18436,7 @@ function createUnreachableError(here, there) {
 }
 module.exports = StateMachine;
 
-},{"./util":133,"events":175}],90:[function(require,module,exports){
+},{"./util":134,"events":176}],91:[function(require,module,exports){
 /* eslint no-undefined:0 */
 'use strict';
 /**
@@ -18345,7 +18449,7 @@ function average(xs) {
 }
 module.exports = average;
 
-},{}],91:[function(require,module,exports){
+},{}],92:[function(require,module,exports){
 'use strict';
 /**
  * @property {number} [availableSend] - bps (undefined in Firefox)
@@ -18403,7 +18507,7 @@ var IceReport = /** @class */ (function () {
 }());
 module.exports = IceReport;
 
-},{}],92:[function(require,module,exports){
+},{}],93:[function(require,module,exports){
 'use strict';
 var IceReport = require('./icereport');
 /**
@@ -18448,7 +18552,7 @@ var IceReportFactory = /** @class */ (function () {
 }());
 module.exports = IceReportFactory;
 
-},{"./icereport":91}],93:[function(require,module,exports){
+},{"./icereport":92}],94:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -18506,7 +18610,7 @@ var LocalAudioTrackStats = /** @class */ (function (_super) {
  */
 module.exports = LocalAudioTrackStats;
 
-},{"./localtrackstats":94}],94:[function(require,module,exports){
+},{"./localtrackstats":95}],95:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -18566,7 +18670,7 @@ var LocalTrackStats = /** @class */ (function (_super) {
 }(TrackStats));
 module.exports = LocalTrackStats;
 
-},{"./trackstats":119}],95:[function(require,module,exports){
+},{"./trackstats":120}],96:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -18659,7 +18763,7 @@ var LocalVideoTrackStats = /** @class */ (function (_super) {
 }(LocalTrackStats));
 module.exports = LocalVideoTrackStats;
 
-},{"./localtrackstats":94}],96:[function(require,module,exports){
+},{"./localtrackstats":95}],97:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -18693,7 +18797,7 @@ var NetworkQualityAudioStats = /** @class */ (function (_super) {
 }(NetworkQualityMediaStats));
 module.exports = NetworkQualityAudioStats;
 
-},{"./networkqualitymediastats":100}],97:[function(require,module,exports){
+},{"./networkqualitymediastats":101}],98:[function(require,module,exports){
 'use strict';
 /**
  * Bandwidth network quality statistics.
@@ -18727,7 +18831,7 @@ var NetworkQualityBandwidthStats = /** @class */ (function () {
 }());
 module.exports = NetworkQualityBandwidthStats;
 
-},{}],98:[function(require,module,exports){
+},{}],99:[function(require,module,exports){
 'use strict';
 /**
  * Fraction lost network quality statistics.
@@ -18756,7 +18860,7 @@ var NetworkQualityFractionLostStats = /** @class */ (function () {
 }());
 module.exports = NetworkQualityFractionLostStats;
 
-},{}],99:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 'use strict';
 /**
  * Latency network quality statistics.
@@ -18790,7 +18894,7 @@ var NetworkQualityLatencyStats = /** @class */ (function () {
 }());
 module.exports = NetworkQualityLatencyStats;
 
-},{}],100:[function(require,module,exports){
+},{}],101:[function(require,module,exports){
 'use strict';
 var NetworkQualitySendStats = require('./networkqualitysendstats');
 var NetworkQualityRecvStats = require('./networkqualityrecvstats');
@@ -18837,7 +18941,7 @@ var NetworkQualityMediaStats = /** @class */ (function () {
 }());
 module.exports = NetworkQualityMediaStats;
 
-},{"./networkqualityrecvstats":101,"./networkqualitysendstats":103}],101:[function(require,module,exports){
+},{"./networkqualityrecvstats":102,"./networkqualitysendstats":104}],102:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -18872,7 +18976,7 @@ var NetworkQualityRecvStats = /** @class */ (function (_super) {
 }(NetworkQualitySendOrRecvStats));
 module.exports = NetworkQualityRecvStats;
 
-},{"./networkqualitysendorrecvstats":102}],102:[function(require,module,exports){
+},{"./networkqualitysendorrecvstats":103}],103:[function(require,module,exports){
 'use strict';
 var NetworkQualityBandwidthStats = require('./networkqualitybandwidthstats');
 var NetworkQualityFractionLostStats = require('./networkqualityfractionloststats');
@@ -18912,7 +19016,7 @@ var NetworkQualitySendOrRecvStats = /** @class */ (function () {
 }());
 module.exports = NetworkQualitySendOrRecvStats;
 
-},{"./networkqualitybandwidthstats":97,"./networkqualityfractionloststats":98,"./networkqualitylatencystats":99}],103:[function(require,module,exports){
+},{"./networkqualitybandwidthstats":98,"./networkqualityfractionloststats":99,"./networkqualitylatencystats":100}],104:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -18947,7 +19051,7 @@ var NetworkQualitySendStats = /** @class */ (function (_super) {
 }(NetworkQualitySendOrRecvStats));
 module.exports = NetworkQualitySendStats;
 
-},{"./networkqualitysendorrecvstats":102}],104:[function(require,module,exports){
+},{"./networkqualitysendorrecvstats":103}],105:[function(require,module,exports){
 'use strict';
 var NetworkQualityAudioStats = require('./networkqualityaudiostats');
 var NetworkQualityVideoStats = require('./networkqualityvideostats');
@@ -18987,7 +19091,7 @@ var NetworkQualityStats = /** @class */ (function () {
 }());
 module.exports = NetworkQualityStats;
 
-},{"./networkqualityaudiostats":96,"./networkqualityvideostats":105}],105:[function(require,module,exports){
+},{"./networkqualityaudiostats":97,"./networkqualityvideostats":106}],106:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -19021,7 +19125,7 @@ var NetworkQualityVideoStats = /** @class */ (function (_super) {
 }(NetworkQualityMediaStats));
 module.exports = NetworkQualityVideoStats;
 
-},{"./networkqualitymediastats":100}],106:[function(require,module,exports){
+},{"./networkqualitymediastats":101}],107:[function(require,module,exports){
 'use strict';
 var ReceiverReport = require('./receiverreport');
 var SenderReport = require('./senderreport');
@@ -19099,7 +19203,7 @@ var PeerConnectionReport = /** @class */ (function () {
 }());
 module.exports = PeerConnectionReport;
 
-},{"./receiverreport":108,"./senderreport":115}],107:[function(require,module,exports){
+},{"./receiverreport":109,"./senderreport":116}],108:[function(require,module,exports){
 'use strict';
 var __read = (this && this.__read) || function (o, n) {
     var m = typeof Symbol === "function" && o[Symbol.iterator];
@@ -19529,7 +19633,7 @@ function updateChrome(factory) {
 }
 module.exports = PeerConnectionReportFactory;
 
-},{"../webrtc/util":172,"./icereportfactory":92,"./peerconnectionreport":106,"./receiverreportfactory":109,"./senderreportfactory":116}],108:[function(require,module,exports){
+},{"../webrtc/util":173,"./icereportfactory":93,"./peerconnectionreport":107,"./receiverreportfactory":110,"./senderreportfactory":117}],109:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -19655,7 +19759,7 @@ var ReceiverReport = /** @class */ (function (_super) {
 }(SenderOrReceiverReport));
 module.exports = ReceiverReport;
 
-},{"./average":90,"./senderorreceiverreport":113,"./sum":118}],109:[function(require,module,exports){
+},{"./average":91,"./senderorreceiverreport":114,"./sum":119}],110:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -19714,7 +19818,7 @@ var ReceiverReportFactory = /** @class */ (function (_super) {
 }(SenderOrReceiverReportFactory));
 module.exports = ReceiverReportFactory;
 
-},{"./receiverreport":108,"./senderorreceiverreportfactory":114}],110:[function(require,module,exports){
+},{"./receiverreport":109,"./senderorreceiverreportfactory":115}],111:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -19766,7 +19870,7 @@ var RemoteAudioTrackStats = /** @class */ (function (_super) {
 }(RemoteTrackStats));
 module.exports = RemoteAudioTrackStats;
 
-},{"./remotetrackstats":111}],111:[function(require,module,exports){
+},{"./remotetrackstats":112}],112:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -19818,7 +19922,7 @@ var RemoteTrackStats = /** @class */ (function (_super) {
 }(TrackStats));
 module.exports = RemoteTrackStats;
 
-},{"./trackstats":119}],112:[function(require,module,exports){
+},{"./trackstats":120}],113:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -19883,7 +19987,7 @@ var RemoteVideoTrackStats = /** @class */ (function (_super) {
 }(RemoteTrackStats));
 module.exports = RemoteVideoTrackStats;
 
-},{"./remotetrackstats":111}],113:[function(require,module,exports){
+},{"./remotetrackstats":112}],114:[function(require,module,exports){
 'use strict';
 /**
  * @property {StatsId} id
@@ -19917,7 +20021,7 @@ var SenderOrReceiverReport = /** @class */ (function () {
 }());
 module.exports = SenderOrReceiverReport;
 
-},{}],114:[function(require,module,exports){
+},{}],115:[function(require,module,exports){
 'use strict';
 /**
  * @property {StatsId} id
@@ -19953,7 +20057,7 @@ var SenderOrReceiverReportFactory = /** @class */ (function () {
 }());
 module.exports = SenderOrReceiverReportFactory;
 
-},{}],115:[function(require,module,exports){
+},{}],116:[function(require,module,exports){
 /* eslint no-undefined:0 */
 'use strict';
 var __extends = (this && this.__extends) || (function () {
@@ -20041,7 +20145,7 @@ var SenderReport = /** @class */ (function (_super) {
 }(SenderOrReceiverReport));
 module.exports = SenderReport;
 
-},{"./average":90,"./senderorreceiverreport":113,"./sum":118}],116:[function(require,module,exports){
+},{"./average":91,"./senderorreceiverreport":114,"./sum":119}],117:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -20100,7 +20204,7 @@ var SenderReportFactory = /** @class */ (function (_super) {
 }(SenderOrReceiverReportFactory));
 module.exports = SenderReportFactory;
 
-},{"./senderorreceiverreportfactory":114,"./senderreport":115}],117:[function(require,module,exports){
+},{"./senderorreceiverreportfactory":115,"./senderreport":116}],118:[function(require,module,exports){
 'use strict';
 var LocalAudioTrackStats = require('./localaudiotrackstats');
 var LocalVideoTrackStats = require('./localvideotrackstats');
@@ -20151,7 +20255,7 @@ var StatsReport = /** @class */ (function () {
 }());
 module.exports = StatsReport;
 
-},{"./localaudiotrackstats":93,"./localvideotrackstats":95,"./remoteaudiotrackstats":110,"./remotevideotrackstats":112}],118:[function(require,module,exports){
+},{"./localaudiotrackstats":94,"./localvideotrackstats":96,"./remoteaudiotrackstats":111,"./remotevideotrackstats":113}],119:[function(require,module,exports){
 'use strict';
 /**
  * @param {Array<number|undefined>} xs
@@ -20162,7 +20266,7 @@ function sum(xs) {
 }
 module.exports = sum;
 
-},{}],119:[function(require,module,exports){
+},{}],120:[function(require,module,exports){
 'use strict';
 /**
  * Statistics for a {@link Track}.
@@ -20221,7 +20325,7 @@ var TrackStats = /** @class */ (function () {
 }());
 module.exports = TrackStats;
 
-},{}],120:[function(require,module,exports){
+},{}],121:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -20283,7 +20387,7 @@ var TrackTransceiver = /** @class */ (function (_super) {
  */
 module.exports = TrackTransceiver;
 
-},{"./queueingeventemitter":55}],121:[function(require,module,exports){
+},{"./queueingeventemitter":56}],122:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -20939,7 +21043,7 @@ TwilioConnection.CloseReason = CloseReason;
  */
 module.exports = TwilioConnection;
 
-},{"./statemachine":89,"./util":133,"./util/log":137,"./util/networkmonitor":139,"./util/timeout":148,"ws":177}],122:[function(require,module,exports){
+},{"./statemachine":90,"./util":134,"./util/log":138,"./util/networkmonitor":140,"./util/timeout":149,"ws":178}],123:[function(require,module,exports){
 'use strict';
 var defer = require('./').defer;
 /**
@@ -21004,7 +21108,7 @@ var AsyncVar = /** @class */ (function () {
 }());
 module.exports = AsyncVar;
 
-},{"./":133}],123:[function(require,module,exports){
+},{"./":134}],124:[function(require,module,exports){
 /**
  * Expose `Backoff`.
  */
@@ -21088,7 +21192,7 @@ var Backoff = /** @class */ (function () {
 }());
 module.exports = Backoff;
 
-},{}],124:[function(require,module,exports){
+},{}],125:[function(require,module,exports){
 /* globals chrome, navigator */
 'use strict';
 var __read = (this && this.__read) || function (o, n) {
@@ -21246,7 +21350,7 @@ module.exports = {
     rebrandedChromeBrowser: rebrandedChromeBrowser
 };
 
-},{}],125:[function(require,module,exports){
+},{}],126:[function(require,module,exports){
 'use strict';
 var __read = (this && this.__read) || function (o, n) {
     var m = typeof Symbol === "function" && o[Symbol.iterator];
@@ -21389,7 +21493,7 @@ var CancelablePromise = /** @class */ (function () {
 }());
 module.exports = CancelablePromise;
 
-},{}],126:[function(require,module,exports){
+},{}],127:[function(require,module,exports){
 'use strict';
 /* eslint-disable camelcase */
 var packageInfo = require('../../package.json');
@@ -21491,7 +21595,7 @@ module.exports.videoContentPreferencesMode = {
     MODE_MANUAL: 'manual'
 };
 
-},{"../../package.json":176}],127:[function(require,module,exports){
+},{"../../package.json":177}],128:[function(require,module,exports){
 'use strict';
 var detectSilence = require('../webaudio/detectsilence');
 var N_ATTEMPTS = 3;
@@ -21532,7 +21636,7 @@ function detectSilentAudio(el) {
 }
 module.exports = detectSilentAudio;
 
-},{"../webaudio/audiocontext":155,"../webaudio/detectsilence":156}],128:[function(require,module,exports){
+},{"../webaudio/audiocontext":156,"../webaudio/detectsilence":157}],129:[function(require,module,exports){
 'use strict';
 // Cached copy of the <canvas> used to check silent video frames.
 var canvas = null;
@@ -21591,7 +21695,7 @@ function detectSilentVideo(el) {
 }
 module.exports = detectSilentVideo;
 
-},{}],129:[function(require,module,exports){
+},{}],130:[function(require,module,exports){
 'use strict';
 /**
  * The {@link DocumentVisibilityMonitor} monitors the visibility state of the DOM
@@ -21713,7 +21817,7 @@ var DocumentVisibilityMonitor = /** @class */ (function () {
 }());
 module.exports = new DocumentVisibilityMonitor(2);
 
-},{}],130:[function(require,module,exports){
+},{}],131:[function(require,module,exports){
 'use strict';
 module.exports = (function (scope) {
     var location = scope.location, URL = scope.URL;
@@ -21736,7 +21840,7 @@ module.exports = (function (scope) {
     };
 }(globalThis));
 
-},{}],131:[function(require,module,exports){
+},{}],132:[function(require,module,exports){
 /* eslint-disable no-console */
 'use strict';
 var __extends = (this && this.__extends) || (function () {
@@ -21834,7 +21938,7 @@ var EventObserver = /** @class */ (function (_super) {
  */
 module.exports = EventObserver;
 
-},{"events":175}],132:[function(require,module,exports){
+},{"events":176}],133:[function(require,module,exports){
 'use strict';
 var Filter = /** @class */ (function () {
     function Filter(options) {
@@ -21878,7 +21982,7 @@ var Filter = /** @class */ (function () {
 }());
 module.exports = Filter;
 
-},{}],133:[function(require,module,exports){
+},{}],134:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -22764,7 +22868,7 @@ exports.isChromeScreenShareTrack = isChromeScreenShareTrack;
 exports.waitForSometime = waitForSometime;
 exports.waitForEvent = waitForEvent;
 
-},{"../webrtc/util":172,"./constants":126,"./sid":146,"./twiliowarning":151}],134:[function(require,module,exports){
+},{"../webrtc/util":173,"./constants":127,"./sid":147,"./twiliowarning":152}],135:[function(require,module,exports){
 /* eslint-disable camelcase */
 'use strict';
 var __extends = (this && this.__extends) || (function () {
@@ -23059,7 +23163,7 @@ function reconnect(publisher, token, sdkName, sdkVersion, roomSid, participantSi
  */
 module.exports = InsightsPublisher;
 
-},{"..":133,"../../util":133,"../browserdetection":124,"../constants":126,"events":175,"ws":177}],135:[function(require,module,exports){
+},{"..":134,"../../util":134,"../browserdetection":125,"../constants":127,"events":176,"ws":178}],136:[function(require,module,exports){
 // eslint-disable-next-line no-warning-comments
 // TODO(mroberts): This should be described as implementing some
 // InsightsPublisher interface.
@@ -23104,7 +23208,7 @@ var InsightsPublisher = /** @class */ (function () {
 }());
 module.exports = InsightsPublisher;
 
-},{}],136:[function(require,module,exports){
+},{}],137:[function(require,module,exports){
 'use strict';
 var defer = require('./').defer;
 /**
@@ -23166,7 +23270,7 @@ var LocalMediaRestartDeferreds = /** @class */ (function () {
 }());
 module.exports = new LocalMediaRestartDeferreds();
 
-},{"./":133}],137:[function(require,module,exports){
+},{"./":134}],138:[function(require,module,exports){
 /* eslint new-cap:0 */
 'use strict';
 var __read = (this && this.__read) || function (o, n) {
@@ -23453,7 +23557,7 @@ function validateLogLevels(levels) {
 }
 module.exports = Log;
 
-},{"../vendor/loglevel":154,"./constants":126}],138:[function(require,module,exports){
+},{"../vendor/loglevel":155,"./constants":127}],139:[function(require,module,exports){
 'use strict';
 /**
  * Calculates the moving average delta for the given pair ofsamples. A sample (S)
@@ -23500,7 +23604,7 @@ var MovingAverageDelta = /** @class */ (function () {
 }());
 module.exports = MovingAverageDelta;
 
-},{}],139:[function(require,module,exports){
+},{}],140:[function(require,module,exports){
 'use strict';
 /**
  * Monitor the network connection status to detect interruptions and handoffs.
@@ -23589,7 +23693,7 @@ var NetworkMonitor = /** @class */ (function () {
 }());
 module.exports = NetworkMonitor;
 
-},{}],140:[function(require,module,exports){
+},{}],141:[function(require,module,exports){
 /* eslint-disable no-console */
 'use strict';
 var __extends = (this && this.__extends) || (function () {
@@ -23652,7 +23756,7 @@ var NullResizeObserver = /** @class */ (function (_super) {
 }(NullObserver));
 module.exports = { NullIntersectionObserver: NullIntersectionObserver, NullResizeObserver: NullResizeObserver, NullObserver: NullObserver };
 
-},{}],141:[function(require,module,exports){
+},{}],142:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.playAllAttachedTracks = void 0;
@@ -23662,7 +23766,7 @@ var playAllAttachedTracks = function (track) {
 };
 exports.playAllAttachedTracks = playAllAttachedTracks;
 
-},{}],142:[function(require,module,exports){
+},{}],143:[function(require,module,exports){
 'use strict';
 var __read = (this && this.__read) || function (o, n) {
     var m = typeof Symbol === "function" && o[Symbol.iterator];
@@ -24200,7 +24304,7 @@ exports.revertSimulcast = revertSimulcast;
 exports.setCodecPreferences = setCodecPreferences;
 exports.setSimulcast = setSimulcast;
 
-},{"../":133,"./simulcast":144}],143:[function(require,module,exports){
+},{"../":134,"./simulcast":145}],144:[function(require,module,exports){
 'use strict';
 var RTCSessionDescription = require('../../webrtc').RTCSessionDescription;
 var _a = require('./'), createPtToCodecName = _a.createPtToCodecName, getMediaSections = _a.getMediaSections;
@@ -24393,7 +24497,7 @@ function addFmtpAttributeForRtxPt(mediaSection, rtxPt, pt) {
 }
 module.exports = workaround;
 
-},{"../../webrtc":160,"./":142}],144:[function(require,module,exports){
+},{"../../webrtc":161,"./":143}],145:[function(require,module,exports){
 'use strict';
 var __read = (this && this.__read) || function (o, n) {
     var m = typeof Symbol === "function" && o[Symbol.iterator];
@@ -24656,7 +24760,7 @@ function setSimulcastInMediaSection(section, trackIdsToAttributes) {
  */
 module.exports = setSimulcastInMediaSection;
 
-},{"../":133}],145:[function(require,module,exports){
+},{"../":134}],146:[function(require,module,exports){
 'use strict';
 var getMediaSections = require('./').getMediaSections;
 /**
@@ -24701,7 +24805,7 @@ var TrackMatcher = /** @class */ (function () {
 }());
 module.exports = TrackMatcher;
 
-},{"./":142}],146:[function(require,module,exports){
+},{"./":143}],147:[function(require,module,exports){
 var SID_CHARS = '1234567890abcdef';
 var SID_CHAR_LENGTH = 32;
 // copied from: https://code.hq.twilio.com/flex/monkey/blob/0fdce2b6c52d6be0b17a5cdb92f0c54f119b8ea8/src/client/lib/sid.ts#L39
@@ -24720,7 +24824,7 @@ function createSID(prefix) {
 exports.sessionSID = createSID('SS');
 exports.createSID = createSID;
 
-},{}],147:[function(require,module,exports){
+},{}],148:[function(require,module,exports){
 'use strict';
 var _a = require('../webrtc/util'), guessBrowser = _a.guessBrowser, isWebRTCSupported = _a.support;
 var getSdpFormat = require('../webrtc/util/sdp').getSdpFormat;
@@ -24767,7 +24871,7 @@ function isSupported() {
 }
 module.exports = isSupported;
 
-},{"../webrtc/util":172,"../webrtc/util/sdp":174,"./browserdetection":124}],148:[function(require,module,exports){
+},{"../webrtc/util":173,"../webrtc/util/sdp":175,"./browserdetection":125}],149:[function(require,module,exports){
 'use strict';
 /**
  * A {@link Timeout} represents a resettable and clearable timeout.
@@ -24862,7 +24966,7 @@ var Timeout = /** @class */ (function () {
 }());
 module.exports = Timeout;
 
-},{}],149:[function(require,module,exports){
+},{}],150:[function(require,module,exports){
 // NOTE: Do not edit this file. This code is auto-generated. Contact the
 // Twilio SDK Team for more information.
 'use strict';
@@ -25886,7 +25990,7 @@ var ConfigurationAcquireTurnFailedError = /** @class */ (function (_super) {
 exports.ConfigurationAcquireTurnFailedError = ConfigurationAcquireTurnFailedError;
 Object.defineProperty(TwilioErrorByCode, 53501, { value: ConfigurationAcquireTurnFailedError });
 
-},{"./twilioerror":150}],150:[function(require,module,exports){
+},{"./twilioerror":151}],151:[function(require,module,exports){
 'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -25968,7 +26072,7 @@ var TwilioError = /** @class */ (function (_super) {
 }(Error));
 module.exports = TwilioError;
 
-},{}],151:[function(require,module,exports){
+},{}],152:[function(require,module,exports){
 'use strict';
 /**
  * @private
@@ -25981,7 +26085,7 @@ var TwilioWarning = {
 };
 module.exports = TwilioWarning;
 
-},{}],152:[function(require,module,exports){
+},{}],153:[function(require,module,exports){
 'use strict';
 var isNonArrayObject = require('./').isNonArrayObject;
 var _a = require('./constants'), E = _a.typeErrors, clientTrackSwitchOffControl = _a.clientTrackSwitchOffControl, videoContentPreferencesMode = _a.videoContentPreferencesMode, subscriptionMode = _a.subscriptionMode, trackPriority = _a.trackPriority, trackSwitchOffMode = _a.trackSwitchOffMode;
@@ -26098,7 +26202,7 @@ exports.validateBandwidthProfile = validateBandwidthProfile;
 exports.validateLocalTrack = validateLocalTrack;
 exports.validateObject = validateObject;
 
-},{"./":133,"./constants":126}],153:[function(require,module,exports){
+},{"./":134,"./constants":127}],154:[function(require,module,exports){
 /**
  * Copyright (c) 2011-2022 Isaac Z. Schlueter
  * Licensed under the ISC License.
@@ -26133,7 +26237,7 @@ module.exports = function inherits(ctor, superCtor) {
     }
 };
 
-},{}],154:[function(require,module,exports){
+},{}],155:[function(require,module,exports){
 /**
  * Copyright (c) 2013 Tim Perry
  * Licensed under the MIT license.
@@ -26373,7 +26477,7 @@ defaultLogger.getLoggers = function getLoggers() {
 defaultLogger['default'] = defaultLogger;
 module.exports = defaultLogger;
 
-},{}],155:[function(require,module,exports){
+},{}],156:[function(require,module,exports){
 /* globals webkitAudioContext, AudioContext */
 'use strict';
 var NativeAudioContext = typeof AudioContext !== 'undefined'
@@ -26456,7 +26560,7 @@ var AudioContextFactory = /** @class */ (function () {
 }());
 module.exports = new AudioContextFactory();
 
-},{}],156:[function(require,module,exports){
+},{}],157:[function(require,module,exports){
 'use strict';
 /**
  * Return a Promise that resolves after `timeout` milliseconds.
@@ -26509,7 +26613,7 @@ function detectSilence(audioContext, stream, timeout) {
 }
 module.exports = detectSilence;
 
-},{}],157:[function(require,module,exports){
+},{}],158:[function(require,module,exports){
 'use strict';
 var detectSilence = require('./detectsilence');
 /**
@@ -26579,7 +26683,7 @@ to get a new one, but we\'ve run out of retries; returning it anyway.');
 }
 module.exports = workaround;
 
-},{"./audiocontext":155,"./detectsilence":156}],158:[function(require,module,exports){
+},{"./audiocontext":156,"./detectsilence":157}],159:[function(require,module,exports){
 'use strict';
 var __read = (this && this.__read) || function (o, n) {
     var m = typeof Symbol === "function" && o[Symbol.iterator];
@@ -27395,7 +27499,7 @@ function standardizeFirefoxStats(response, _a) {
  */
 module.exports = getStats;
 
-},{"./util":172,"./util/sdp":174}],159:[function(require,module,exports){
+},{"./util":173,"./util/sdp":175}],160:[function(require,module,exports){
 /* globals navigator */
 'use strict';
 /**
@@ -27419,7 +27523,7 @@ function getUserMedia(constraints) {
 }
 module.exports = getUserMedia;
 
-},{}],160:[function(require,module,exports){
+},{}],161:[function(require,module,exports){
 'use strict';
 var WebRTC = {};
 Object.defineProperties(WebRTC, {
@@ -27454,7 +27558,7 @@ Object.defineProperties(WebRTC, {
 });
 module.exports = WebRTC;
 
-},{"./getstats":158,"./getusermedia":159,"./mediastream":161,"./mediastreamtrack":162,"./rtcicecandidate":163,"./rtcpeerconnection":166,"./rtcsessiondescription":171}],161:[function(require,module,exports){
+},{"./getstats":159,"./getusermedia":160,"./mediastream":162,"./mediastreamtrack":163,"./rtcicecandidate":164,"./rtcpeerconnection":167,"./rtcsessiondescription":172}],162:[function(require,module,exports){
 /* globals MediaStream */
 'use strict';
 if (typeof MediaStream === 'function') {
@@ -27466,7 +27570,7 @@ else {
     };
 }
 
-},{}],162:[function(require,module,exports){
+},{}],163:[function(require,module,exports){
 /* global MediaStreamTrack */
 'use strict';
 if (typeof MediaStreamTrack === 'function') {
@@ -27478,7 +27582,7 @@ else {
     };
 }
 
-},{}],163:[function(require,module,exports){
+},{}],164:[function(require,module,exports){
 /* global RTCIceCandidate */
 'use strict';
 if (typeof RTCIceCandidate === 'function') {
@@ -27490,7 +27594,7 @@ else {
     };
 }
 
-},{}],164:[function(require,module,exports){
+},{}],165:[function(require,module,exports){
 /* globals RTCDataChannel, RTCPeerConnection, RTCSessionDescription */
 'use strict';
 var __extends = (this && this.__extends) || (function () {
@@ -28054,7 +28158,7 @@ function updateTrackIdsToSSRCs(sdpFormat, tracksToSSRCs, sdp) {
 }
 module.exports = ChromeRTCPeerConnection;
 
-},{"../../eventtarget":11,"../mediastream":161,"../rtcrtpsender":168,"../rtcsessiondescription/chrome":169,"../util":172,"../util/latch":173,"../util/sdp":174}],165:[function(require,module,exports){
+},{"../../eventtarget":11,"../mediastream":162,"../rtcrtpsender":169,"../rtcsessiondescription/chrome":170,"../util":173,"../util/latch":174,"../util/sdp":175}],166:[function(require,module,exports){
 /* globals RTCPeerConnection */
 'use strict';
 var __extends = (this && this.__extends) || (function () {
@@ -28381,7 +28485,7 @@ function overwriteWithInitiallyNegotiatedDtlsRole(description, dtlsRole) {
 }
 module.exports = FirefoxRTCPeerConnection;
 
-},{"../../eventtarget":11,"../rtcsessiondescription/firefox":170,"../util":172,"../util/sdp":174}],166:[function(require,module,exports){
+},{"../../eventtarget":11,"../rtcsessiondescription/firefox":171,"../util":173,"../util/sdp":175}],167:[function(require,module,exports){
 'use strict';
 if (typeof RTCPeerConnection === 'function') {
     var guessBrowser = require('../util').guessBrowser;
@@ -28406,7 +28510,7 @@ else {
     };
 }
 
-},{"../util":172,"./chrome":164,"./firefox":165,"./safari":167}],167:[function(require,module,exports){
+},{"../util":173,"./chrome":165,"./firefox":166,"./safari":168}],168:[function(require,module,exports){
 /* globals RTCPeerConnection, RTCSessionDescription */
 'use strict';
 var __extends = (this && this.__extends) || (function () {
@@ -28795,7 +28899,7 @@ function shimDataChannel(dataChannel) {
 }
 module.exports = SafariRTCPeerConnection;
 
-},{"../../eventtarget":11,"../util":172,"../util/latch":173,"../util/sdp":174}],168:[function(require,module,exports){
+},{"../../eventtarget":11,"../util":173,"../util/latch":174,"../util/sdp":175}],169:[function(require,module,exports){
 'use strict';
 /**
  * RTCRtpSender shim.
@@ -28836,7 +28940,7 @@ var RTCRtpSenderShim = /** @class */ (function () {
 // using the RTCRtpSender APIs.
 module.exports = RTCRtpSenderShim;
 
-},{}],169:[function(require,module,exports){
+},{}],170:[function(require,module,exports){
 /* globals RTCSessionDescription */
 'use strict';
 // This class wraps Chrome's RTCSessionDescription implementation. It provides
@@ -28880,12 +28984,12 @@ var ChromeRTCSessionDescription = /** @class */ (function () {
 }());
 module.exports = ChromeRTCSessionDescription;
 
-},{}],170:[function(require,module,exports){
+},{}],171:[function(require,module,exports){
 /* globals RTCSessionDescription */
 'use strict';
 module.exports = RTCSessionDescription;
 
-},{}],171:[function(require,module,exports){
+},{}],172:[function(require,module,exports){
 /* globals RTCSessionDescription */
 'use strict';
 if (typeof RTCSessionDescription === 'function') {
@@ -28908,7 +29012,7 @@ else {
     };
 }
 
-},{"../util":172,"./chrome":169,"./firefox":170}],172:[function(require,module,exports){
+},{"../util":173,"./chrome":170,"./firefox":171}],173:[function(require,module,exports){
 'use strict';
 var __read = (this && this.__read) || function (o, n) {
     var m = typeof Symbol === "function" && o[Symbol.iterator];
@@ -29295,7 +29399,7 @@ exports.makeUUID = makeUUID;
 exports.proxyProperties = proxyProperties;
 exports.support = support;
 
-},{}],173:[function(require,module,exports){
+},{}],174:[function(require,module,exports){
 'use strict';
 var defer = require('./').defer;
 var states = {
@@ -29402,7 +29506,7 @@ function createUnreachableStateError(from, to) {
 }
 module.exports = Latch;
 
-},{"./":172}],174:[function(require,module,exports){
+},{"./":173}],175:[function(require,module,exports){
 /* globals RTCPeerConnection, RTCRtpTransceiver */
 'use strict';
 var _a = require('./'), flatMap = _a.flatMap, guessBrowser = _a.guessBrowser;
@@ -29689,7 +29793,7 @@ exports.getUnifiedPlanSSRCs = getUnifiedPlanSSRCs;
 exports.updatePlanBTrackIdsToSSRCs = updatePlanBTrackIdsToSSRCs;
 exports.updateUnifiedPlanTrackIdsToSSRCs = updateUnifiedPlanTrackIdsToSSRCs;
 
-},{"./":172}],175:[function(require,module,exports){
+},{"./":173}],176:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -30188,12 +30292,12 @@ function eventTargetAgnosticAddListener(emitter, name, listener, flags) {
   }
 }
 
-},{}],176:[function(require,module,exports){
+},{}],177:[function(require,module,exports){
 module.exports={
   "name": "twilio-video",
   "title": "Twilio Video",
   "description": "Twilio Video JavaScript Library",
-  "version": "2.29.0-ev",
+  "version": "2.29.1-ev",
   "homepage": "https://twilio.com",
   "author": "Mark Andrus Roberts <mroberts@twilio.com>",
   "contributors": [
@@ -30265,6 +30369,7 @@ module.exports={
     "node-http-server": "^8.1.2",
     "npm-run-all": "^4.0.2",
     "nyc": "^15.1.0",
+    "regex-replace": "^2.3.1",
     "requirejs": "^2.3.3",
     "rimraf": "^2.6.1",
     "simple-git": "^1.126.0",
@@ -30290,6 +30395,7 @@ module.exports={
     "lint:js": "eslint ./lib ./test/*.js ./docker/**/*.js ./test/framework/*.js ./test/lib/*.js ./test/integration/** ./test/unit/** ",
     "lint:ts": "eslint ./tsdef/*.ts ./lib/**/*.ts",
     "lint": "npm-run-all lint:js lint:ts",
+    "patch-linkifyit-111": "regex-replace \"readonly linkify: LinkifyIt.LinkifyIt;\" \"readonly linkify: typeof LinkifyIt;\" \"node_modules/@types/markdown-it/lib/index.d.ts\" --filecontents",
     "printVersion": "node --version && npm --version",
     "test:unit": "npm-run-all printVersion build:es5 && nyc --report-dir=./coverage --include=lib/**/* --reporter=html --reporter=lcov --reporter=text mocha -r ts-node/register ./test/unit/*",
     "test:unit:quick": "nyc --report-dir=./coverage --include=lib/**/* --reporter=html --reporter=lcov mocha -r ts-node/register",
@@ -30328,7 +30434,7 @@ module.exports={
     "test:framework:install": "npm install chromedriver && npm install selenium-webdriver && npm install geckodriver && npm install puppeteer",
     "test:framework": "npm-run-all test:framework:install test:framework:no-framework test:framework:react",
     "test": "npm-run-all test:unit test:integration",
-    "build:es5": "rimraf ./es5 && mkdir -p es5 && tsc tsdef/twilio-video-tests.ts --noEmit --lib es2018,dom && tsc",
+    "build:es5": "rimraf ./es5 && mkdir -p es5 && npm run patch-linkifyit-111 && tsc tsdef/twilio-video-tests.ts --noEmit --lib es2018,dom && tsc",
     "build:js": "node ./scripts/build.js ./src/twilio-video.js ./LICENSE.md ./dist/twilio-video.js",
     "build:min.js": "uglifyjs ./dist/twilio-video.js -o ./dist/twilio-video.min.js --comments \"/^! twilio-video.js/\" -b beautify=false,ascii_only=true",
     "build": "npm-run-all clean lint docs test:unit test:integration build:es5 build:js build:min.js test:umd",
@@ -30349,7 +30455,7 @@ module.exports={
   }
 }
 
-},{}],177:[function(require,module,exports){
+},{}],178:[function(require,module,exports){
 module.exports = WebSocket;
 
 },{}]},{},[12]);

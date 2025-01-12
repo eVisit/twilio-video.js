@@ -15,6 +15,8 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var isIOS = require('../../util/browserdetection').isIOS;
+var detectSilentAudio = require('../../util/detectsilentaudio');
+var isIOSChrome = require('../../webrtc/util').isIOSChrome;
 var AudioTrack = require('./audiotrack');
 var mixinLocalMediaTrack = require('./localmediatrack');
 var LocalMediaAudioTrack = mixinLocalMediaTrack(AudioTrack);
@@ -196,6 +198,28 @@ var LocalAudioTrack = /** @class */ (function (_super) {
             _this._constraints = constraints;
             _this._maybeRestartOnDefaultDeviceChange();
         });
+    };
+    /**
+     * NOTE(mmalavalli): On iOS 17 Chrome, a LocalAudioTrack with Krisp Noise Cancellation
+     * enabled that is restarted due to foregrounding the browser is silent for as-of-yet
+     * unknown reason. We work around this by discarding the Krisp MediaStreamTrack and using
+     * the source MediaStreamTrack. (VIDEO-13006)
+     * @private
+     */
+    LocalAudioTrack.prototype._setMediaStreamTrack = function (mediaStreamTrack) {
+        var _this = this;
+        var _a = this, log = _a._log, noiseCancellation = _a.noiseCancellation;
+        var promise = _super.prototype._setMediaStreamTrack.call(this, mediaStreamTrack);
+        if (isIOSChrome() && !!noiseCancellation) {
+            log.debug('iOS Chrome detected, checking if the restarted Krisp audio is silent');
+            promise = promise.then(function () { return detectSilentAudio(_this._dummyEl); }).then(function (isSilent) {
+                log.debug("Krisp audio is " + (isSilent ? 'silent, using source audio' : 'not silent'));
+                return isSilent && noiseCancellation.disablePermanently().then(function () {
+                    return _super.prototype._setMediaStreamTrack.call(_this, noiseCancellation.sourceTrack);
+                });
+            });
+        }
+        return promise;
     };
     /**
      * Disable the {@link LocalAudioTrack}. This is equivalent to muting the audio source.

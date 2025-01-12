@@ -15,7 +15,9 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var MediaTrack = require('./mediatrack');
+var captureVideoFrames = require('./capturevideoframes');
 var VideoProcessorEventObserver = require('./videoprocessoreventobserver');
+var guessBrowser = require('../../webrtc/util').guessBrowser;
 var DEFAULT_FRAME_RATE = require('../../util/constants').DEFAULT_FRAME_RATE;
 /**
  * A {@link VideoTrack} is a {@link Track} representing video.
@@ -48,10 +50,6 @@ var VideoTrack = /** @class */ (function (_super) {
     function VideoTrack(mediaTrackTransceiver, options) {
         var _this = _super.call(this, mediaTrackTransceiver, options) || this;
         Object.defineProperties(_this, {
-            _captureTimeoutId: {
-                value: null,
-                writable: true
-            },
             _isCapturing: {
                 value: false,
                 writable: true
@@ -71,6 +69,10 @@ var VideoTrack = /** @class */ (function (_super) {
             _processorOptions: {
                 value: {},
                 writable: true,
+            },
+            _stopCapture: {
+                value: function () { },
+                writable: true
             },
             _unmuteHandler: {
                 value: null,
@@ -138,28 +140,20 @@ var VideoTrack = /** @class */ (function (_super) {
         this._isCapturing = true;
         this._processorEventObserver.emit('start');
         this._log.debug('Start capturing frames');
-        var startTime = Date.now();
-        var processFramePeriodMs;
+        var inputFrameBufferType = this._processorOptions.inputFrameBufferType;
         this._dummyEl.play().then(function () {
-            var captureFrame = function (cb) {
-                clearTimeout(_this._captureTimeoutId);
-                var _a = _this.mediaStreamTrack.getSettings().frameRate, frameRate = _a === void 0 ? DEFAULT_FRAME_RATE : _a;
-                var capturePeriodMs = Math.floor(1000 / frameRate);
-                var delay = capturePeriodMs - processFramePeriodMs;
-                if (delay < 0 || typeof processFramePeriodMs !== 'number') {
-                    delay = 0;
-                }
-                _this._captureTimeoutId = setTimeout(cb, delay);
-            };
-            var process = function () {
+            var process = function (videoFrame) {
                 var checkResult = _this._checkIfCanCaptureFrames();
                 if (!checkResult.canCaptureFrames) {
+                    if (videoFrame) {
+                        videoFrame.close();
+                    }
                     _this._isCapturing = false;
+                    _this._stopCapture();
                     _this._processorEventObserver.emit('stop', checkResult.message);
                     _this._log.debug('Cannot capture frames. Stopping capturing frames.');
-                    return;
+                    return Promise.resolve();
                 }
-                startTime = Date.now();
                 var _a = _this.mediaStreamTrack.getSettings(), _b = _a.width, width = _b === void 0 ? 0 : _b, _c = _a.height, height = _c === void 0 ? 0 : _c;
                 // Setting the canvas' dimension triggers a redraw.
                 // Only set it if it has changed.
@@ -174,15 +168,17 @@ var VideoTrack = /** @class */ (function (_super) {
                     }
                     _this._inputFrame.getContext('2d').drawImage(_this._dummyEl, 0, 0, width, height);
                 }
+                var input = videoFrame || (['video', 'videoframe'].includes(inputFrameBufferType)
+                    ? _this._dummyEl
+                    : _this._inputFrame);
                 var result = null;
                 try {
-                    var input = _this._processorOptions.inputFrameBufferType === 'video' ? _this._dummyEl : _this._inputFrame;
                     result = _this.processor.processFrame(input, _this._outputFrame);
                 }
                 catch (ex) {
                     _this._log.debug('Exception detected after calling processFrame.', ex);
                 }
-                ((result instanceof Promise) ? result : Promise.resolve(result))
+                return ((result instanceof Promise) ? result : Promise.resolve(result))
                     .then(function () {
                     if (_this._outputFrame) {
                         if (typeof _this.processedTrack.requestFrame === 'function') {
@@ -190,13 +186,9 @@ var VideoTrack = /** @class */ (function (_super) {
                         }
                         _this._processorEventObserver.emit('stats');
                     }
-                })
-                    .finally(function () {
-                    processFramePeriodMs = Date.now() - startTime;
-                    captureFrame(process);
                 });
             };
-            captureFrame(process);
+            _this._stopCapture = captureVideoFrames(_this._dummyEl, process, inputFrameBufferType);
         }).catch(function (error) { return _this._log.error('Video element cannot be played', { error: error, track: _this }); });
     };
     /**
@@ -296,7 +288,11 @@ var VideoTrack = /** @class */ (function (_super) {
         if (typeof OffscreenCanvas === 'undefined' && inputFrameBufferType === 'offscreencanvas') {
             throw new Error('OffscreenCanvas is not supported by this browser.');
         }
-        if (inputFrameBufferType && inputFrameBufferType !== 'video' && inputFrameBufferType !== 'canvas' && inputFrameBufferType !== 'offscreencanvas') {
+        if (inputFrameBufferType
+            && inputFrameBufferType !== 'videoframe'
+            && inputFrameBufferType !== 'video'
+            && inputFrameBufferType !== 'canvas'
+            && inputFrameBufferType !== 'offscreencanvas') {
             throw new Error("Invalid inputFrameBufferType of " + inputFrameBufferType);
         }
         if (!inputFrameBufferType) {
@@ -475,7 +471,8 @@ var VideoTrack = /** @class */ (function (_super) {
         }
         this._processorEventObserver.emit('remove');
         this._log.debug('Removing VideoProcessor from the VideoTrack', processor);
-        clearTimeout(this._captureTimeoutId);
+        this._stopCapture();
+        this._stopCapture = function () { };
         this.mediaStreamTrack.removeEventListener('unmute', this._unmuteHandler);
         this._processorOptions = {};
         this._unmuteHandler = null;
@@ -515,7 +512,7 @@ function dimensionsChanged(track, elem) {
  * Any exception raised (either synchronously or asynchronously) in `processFrame` will result in the frame being dropped.
  * This callback has the following signature:<br/><br/>
  * <code>processFrame(</code><br/>
- * &nbsp;&nbsp;<code>inputFrameBuffer: OffscreenCanvas | HTMLCanvasElement | HTMLVideoElement,</code><br/>
+ * &nbsp;&nbsp;<code>inputFrameBuffer: OffscreenCanvas | HTMLCanvasElement | HTMLVideoElement | VideoFrame,</code><br/>
  * &nbsp;&nbsp;<code>outputFrameBuffer: HTMLCanvasElement</code><br/>
  * <code>): Promise&lt;void&gt; | void;</code>
  *
@@ -539,6 +536,10 @@ function dimensionsChanged(track, elem) {
  * Possible values include the following.
  * <br/>
  * <br/>
+ * `videoframe` - Your Video Processor will receive a [VideoFrame](https://developer.mozilla.org/en-US/docs/Web/API/VideoFrame).
+ * On browsers that do not support `VideoFrame`, it will receive an [HTMLVideoElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement) instead.
+ * <br/>
+ * <br/>
  * `offscreencanvas` - Your Video Processor will receive an [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas)
  * which is good for canvas-related processing that can be rendered off screen.
  * <br/>
@@ -552,8 +553,9 @@ function dimensionsChanged(track, elem) {
  * the frame directly to your output canvas.
  * @property {string} [outputFrameBufferContextType="2d"] - The SDK needs the [context type](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext)
  * that your Video Processor uses in order to properly generate the processed track. For example, if your Video Processor uses WebGL2 (`canvas.getContext('webgl2')`),
- * you should set `outputFrameBufferContextType` to `webgl2`. Or if you're using Canvas 2D processing (`canvas.getContext('2d')`),
- * you should set `outputFrameBufferContextType` to `2d`.
+ * you should set `outputFrameBufferContextType` to `webgl2`. If you're using Canvas 2D processing (`canvas.getContext('2d')`),
+ * you should set `outputFrameBufferContextType` to `2d`. If the output frame is an [ImageBitmap](https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap),
+ * you should set `outputFrameBufferContextType` to `bitmaprenderer`.
  */
 /**
  * The {@link VideoTrack}'s dimensions changed.
